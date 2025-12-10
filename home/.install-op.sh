@@ -11,8 +11,6 @@ Linux)
       url=$(curl -s https://app-updates.agilebits.com/product_history/CLI2 \
         | grep -oP "https://.*\.agilebits\.com/.*/op_linux_amd64_.*\.zip" \
 	| head -1)
-
-      echo $url
       
       curl --location --output $dir/op-cli.zip "$url"
       unzip -d $dir/op $dir/op-cli.zip
