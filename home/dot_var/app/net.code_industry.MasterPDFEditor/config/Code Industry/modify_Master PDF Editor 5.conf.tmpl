@@ -2,6 +2,10 @@
 
 source auto
 
-set "General" "RegistrationCode" {{ (bitwardenFields "item" (bitwarden "item" "License - Code Industry - Master PDF Editor - AKurpanek").id).Lizenzschlüssel.value | quote }} separator="="
+set "General" "RegistrationCode" {{
+  onepasswordRead "op://Personal/License-MasterPdfEditor-AKu/reg_code" | quote 
+}} separator="="
+
 set "General" "check_updates" "0" separator="="
+
 ignore regex ".*" ".*"
