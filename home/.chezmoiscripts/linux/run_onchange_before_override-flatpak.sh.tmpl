@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# Enable strict mode to catch errors early.
+set -euo pipefail
+
+# -----------------------------------------------------------------------------
+# Apply Flatpak overrides
+# -----------------------------------------------------------------------------
+
+# Apply override for Master PDF Editor
+# while nss-db is stored in ~/.masterpdfeditor/nssdb/
+APP_ID="net.code_industry.MasterPDFEditor"
+if flatpak info "${APP_ID}" >/dev/null 2>&1; then
+  flatpak override \
+      --user \
+      --filesystem=home \
+      "${APP_ID}"
+fi
