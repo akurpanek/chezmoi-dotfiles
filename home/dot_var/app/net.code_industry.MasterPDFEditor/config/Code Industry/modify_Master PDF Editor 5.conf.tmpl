@@ -9,4 +9,6 @@ set "General" "RegistrationCode" {{
 
 set "General" "check_updates" "0" separator="="
 
+set "General" "cetification_paths" "/var/home/{{ .chezmoi.username }}/.certs/, /var/home/{{ .chezmoi.username }}/.local/share/certs/, /etc/ssl/certs/, /usr/local/share/ca-certificates/, /etc/pki/tls/certs/" separator="="
+
 ignore regex ".*" ".*"
